@@ -1,0 +1,9 @@
+executable = firstcondor.sh
+arguments = 14232 $(Process)
+output = output/out/output$(Process).out
+should_transfer_files	= IF_NEEDED
+when_to_transfer_output = ON_EXIT
+transfer_output_files	= output14232file$(Process).root to=output/evt/
+error			= output/err/error$(Process).err
+log = output/log/log$(Process).log
+queue 70
