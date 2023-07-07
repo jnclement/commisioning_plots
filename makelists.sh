@@ -16,7 +16,7 @@ do
     done
 done
 
-for side in West
+for side in West East
 do
     fname="$( printf '/sphenix/lustre01/sphnxpro/commissioning/HCal/beam/beam_%s-%08d-0000.prdf' $side $RN )"
     echo $fname > $side".list"
@@ -27,11 +27,11 @@ do
     done
 done
 
-fname="$( printf '/sphenix/lustre01/sphnxpro/commissioning/mbd/beam/beam_mbd-%08d-0000.prdf' $RN )"
+fname="$( printf '/sphenix/lustre01/sphnxpro/commissioning/mbd/beam/beam_seb18-%08d-0000.prdf' $RN )"
 echo $fname > "mbd.list"
 for subfile in $(seq 1 $MRANGE)
 do
-    fname="$( printf '/sphenix/lustre01/sphnxpro/commissioning/mbd/beam/beam_mbd-%08d-%04d.prdf' $RN $subfile )"
+    fname="$( printf '/sphenix/lustre01/sphnxpro/commissioning/mbd/beam/beam_seb18-%08d-%04d.prdf' $RN $subfile )"
     echo $fname >> "mbd.list"
 done
 

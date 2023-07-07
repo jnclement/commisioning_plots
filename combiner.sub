@@ -1,0 +1,7 @@
+executable		= combiner.sh
+output			= output/out/output$(Process).out
+should_transfer_files	= IF_NEEDED
+when_to_transfer_output = ON_EXIT
+error			= output/err/error$(Process).err
+log 			= output/log/log$(Process).log
+queue 1

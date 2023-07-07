@@ -16,17 +16,17 @@ R__LOAD_LIBRARY(libffarawmodules.so)
 //9451
 void Fun4All_Combiner(int nEvents = 0)
 {
-  infile00 = "seb00.list";
-  infile01 = "seb01.list";
-  infile02 = "seb02.list";
-  infile03 = "seb03.list";
-  infile04 = "seb04.list";
-  infile05 = "seb05.list";
-  infile06 = "seb06.list";
-  infile07 = "West.list";
-  infile08 = "East.list";
-  infile09 = "mbd.list";
-  infile10 = "zdc.list";
+  string infile00 = "seb00.list";
+  string infile01 = "seb01.list";
+  string infile02 = "seb02.list";
+  string infile03 = "seb03.list";
+  string infile04 = "seb04.list";
+  string infile05 = "seb05.list";
+  string infile06 = "seb06.list";
+  string infile07 = "West.list";
+  string infile08 = "East.list";
+  string infile09 = "mbd.list";
+  string infile10 = "zdc.list";
   vector<string> infile;
   infile.push_back(infile00);
   infile.push_back(infile01);
