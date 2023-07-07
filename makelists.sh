@@ -1,11 +1,11 @@
 #!/bin/bash
 
-RN=14232
-EMRANGE=9
-HRANGE=156
+RN=20508
+EMRANGE=10
+HRANGE=7
 MRANGE=1
 ZRANGE=0
-for seb in seb03 seb04 seb06 seb07
+for seb in seb00 seb01 seb02 seb03 seb04 seb05 seb06
 do
     fname="$( printf '/sphenix/lustre01/sphnxpro/commissioning/emcal/beam/beam_%s-%08d-0000.prdf' $seb $RN )"
     echo $fname > $seb".list"
