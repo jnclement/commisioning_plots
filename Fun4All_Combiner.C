@@ -14,28 +14,34 @@ R__LOAD_LIBRARY(libfun4all.so)
 R__LOAD_LIBRARY(libfun4allraw.so)
 R__LOAD_LIBRARY(libffarawmodules.so)
 //9451
-void Fun4All_Combiner(int nEvents = 0,
-//			     const string &input_file00 = "/sphenix/lustre01/sphnxpro/commissioning/HCal/cosmics/cosmics_East-00008830-0000.prdf",
-//		      const string &input_file01 = "/sphenix/lustre01/sphnxpro/commissioning/HCal/cosmics/cosmics_West-00008830-0000.prdf")
-		      const string &input_file00 = "seb03.list",
-		      const string &input_file01 = "seb04.list",
-		      const string &input_file02 = "seb06.list",
-		      const string &input_file03 = "seb07.list",
-		      const string &input_file04 = "mbd.list",
-		      const string &input_file05 = "zdc.list",
-		      const string &input_file06 = "West.list")
+void Fun4All_Combiner(int nEvents = 0)
 {
+  infile00 = "seb00.list";
+  infile01 = "seb01.list";
+  infile02 = "seb02.list";
+  infile03 = "seb03.list";
+  infile04 = "seb04.list";
+  infile05 = "seb05.list";
+  infile06 = "seb06.list";
+  infile07 = "West.list";
+  infile08 = "East.list";
+  infile09 = "mbd.list";
+  infile10 = "zdc.list";
   vector<string> infile;
-  infile.push_back(input_file00);
-  infile.push_back(input_file01);
-  infile.push_back(input_file02);
-  infile.push_back(input_file03);
-  infile.push_back(input_file04);
-  infile.push_back(input_file05);
-  infile.push_back(input_file06);
+  infile.push_back(infile00);
+  infile.push_back(infile01);
+  infile.push_back(infile02);
+  infile.push_back(infile03);
+  infile.push_back(infile04);
+  infile.push_back(infile05);
+  infile.push_back(infile06);
+  infile.push_back(infile07);
+  infile.push_back(infile08);
+  infile.push_back(infile09);
+  infile.push_back(infile10);
   Fun4AllServer *se = Fun4AllServer::instance();
-//  EventCombiner *evtcomb = new EventCombiner();
-//  evtcomb->Verbosity(1);
+  //  EventCombiner *evtcomb = new EventCombiner();
+  //  evtcomb->Verbosity(1);
   Fun4AllPrdfInputPoolManager *in = new Fun4AllPrdfInputPoolManager("Comb");
 //  in->Verbosity(10);
   for (auto iter : infile)
