@@ -1,6 +1,10 @@
-NFILES=$2
+#!/bin/bash
 
-for i in `seq 0 $NFILES` ; do
-    mv output${1}file${i}.root output/evt/
-done
-root -q 'merge_root.C('$NFILES')'
+source /opt/sphenix/core/bin/sphenix_setup.sh -n
+source /opt/sphenix/core/bin/setup_local.sh /sphenix/user/jocl/projects/testinstall
+export HOME=/sphenix/u/jocl
+
+NLOW=$1
+NLO=$(( 10*NLOW ))
+NUP=$((NLO + 10))
+root -b -q 'merge_root.C('$NLO','$NUP')'

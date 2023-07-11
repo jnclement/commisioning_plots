@@ -27,14 +27,15 @@
 #include <algorithm>
 #include "TChain.h"
 
-int merge_root(int nfiles)
+int merge_root(int nlow, int nup)
 {
   TChain ch("towerntup");
   string filename;
-  string base = "output/evt/output14232file";
+  string base = "output/evt/output20508file";
   string ext = ".root";
-  for(int i=0; i<nfiles; i++)
+  for(int i=nlow; i<nup; i++)
     {
+      cout << "File " << i << endl;
       filename = base;
       filename += to_string(i);
       filename += ext;
@@ -48,7 +49,9 @@ int merge_root(int nfiles)
 	  continue;
 	}
     }
-  filename = "results/run14232_" + to_string(nfiles) + ext;
+  filename = "results/run20508_" + to_string(nlow)+ "_" + to_string(nup) + ext;
+  cout << filename << endl;
   ch.Merge(filename.c_str());
+  cout << "Merged." << endl;
   return 0;
 }

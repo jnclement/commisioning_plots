@@ -23,10 +23,11 @@ void Fun4All_Combiner(int nEvents = 0)
   string infile04 = "seb04.list";
   string infile05 = "seb05.list";
   string infile06 = "seb06.list";
-  string infile07 = "West.list";
-  string infile08 = "East.list";
-  string infile09 = "mbd.list";
-  string infile10 = "zdc.list";
+  string infile07 = "seb07.list";
+  string infile08 = "West.list";
+  string infile09 = "East.list";
+  string infile10 = "mbd.list";
+  string infile11 = "zdc.list";
   vector<string> infile;
   infile.push_back(infile00);
   infile.push_back(infile01);
@@ -38,7 +39,7 @@ void Fun4All_Combiner(int nEvents = 0)
   infile.push_back(infile07);
   infile.push_back(infile08);
   infile.push_back(infile09);
-  infile.push_back(infile10);
+  //infile.push_back(infile10);
   Fun4AllServer *se = Fun4AllServer::instance();
   //  EventCombiner *evtcomb = new EventCombiner();
   //  evtcomb->Verbosity(1);
