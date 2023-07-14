@@ -63,7 +63,9 @@ int CaloAna::Init(PHCompositeNode*)
   // hm->registerHisto(h1);
   outfile = new TFile(outfilename.c_str(), "RECREATE");
 
-  towerntuple = new TTree("towerntup", "Towers");
+  towerntuple = new TTree("ttree", "Towers");
+
+  /*
   towerntuple->Branch("energy",&m_energy);
   towerntuple->Branch("etabin",&m_etabin);
   towerntuple->Branch("phibin",&m_phibin);
@@ -84,7 +86,7 @@ int CaloAna::Init(PHCompositeNode*)
   towerntuple->Branch("zdc_energy",&m_zdc_energy);
   towerntuple->Branch("zdc_index",&m_zdc_index);
   towerntuple->Branch("zdc_side",&m_zdc_side);
-
+  */
   towerntuple->Branch("bbc_energy",&m_bbc_energy);
   towerntuple->Branch("bbc_type",&m_bbc_type);
   towerntuple->Branch("bbc_side",&m_bbc_side);
@@ -112,7 +114,7 @@ int CaloAna::process_towers(PHCompositeNode* topNode)
   nodename.str("");
   nodename << "TOWERS_CEMC_" << detector;
   geonodename.str("");
- 
+  /*
   {
     TowerInfoContainer* offlinetowers = findNode::getClass<TowerInfoContainerv1>(topNode, "TOWERS_CEMC");
     int size = offlinetowers->size(); //online towers should be the same!
@@ -166,7 +168,7 @@ int CaloAna::process_towers(PHCompositeNode* topNode)
 	m_hcalout_phibin.push_back(iphi);
       }
   }
-
+  */
 
   {
     TowerInfoContainer* offlinetowers = findNode::getClass<TowerInfoContainerv1>(topNode, "TOWERS_MBD");
@@ -185,7 +187,7 @@ int CaloAna::process_towers(PHCompositeNode* topNode)
       }
   }
 
-
+  /*
   {
     TowerInfoContainer* offlinetowers = findNode::getClass<TowerInfoContainerv1>(topNode, "TOWERS_ZDC");
     int size = offlinetowers->size(); //online towers should be the same!
@@ -202,9 +204,9 @@ int CaloAna::process_towers(PHCompositeNode* topNode)
 	m_zdc_index.push_back(index);
       }
   }
-
+  */
   towerntuple->Fill();
-  
+  /*
   m_etabin.clear();
   m_phibin.clear();
   m_energy.clear();
@@ -224,7 +226,7 @@ int CaloAna::process_towers(PHCompositeNode* topNode)
   m_zdc_index.clear();
   m_zdc_side.clear();
 
-
+  */
   m_bbc_energy.clear();
   m_bbc_type.clear();
   m_bbc_side.clear();

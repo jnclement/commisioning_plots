@@ -37,6 +37,7 @@ void Fun4All_CaloProduction(const std::string &fname = "/sphenix/lustre01/sphnxp
   rc->set_StringFlag("CDB_GLOBALTAG","MDC2");
   rc->set_uint64Flag("TIMESTAMP",6);
   const string outfile = "run" + to_string(rn)+"file"+to_string(subfile)+"test.root";
+  /*
   CaloTowerBuilder *ca = new CaloTowerBuilder();
   ca->set_detector_type(CaloTowerBuilder::CEMC);
   ca->set_nsamples(31);
@@ -48,7 +49,7 @@ void Fun4All_CaloProduction(const std::string &fname = "/sphenix/lustre01/sphnxp
   ca1->set_nsamples(31);
   ca1->set_processing_type(CaloWaveformProcessing::FAST);
   se->registerSubsystem(ca1);
-
+  */
   CaloTowerBuilder *ca2 = new CaloTowerBuilder();
   ca2->set_detector_type(CaloTowerBuilder::HCALOUT);
   ca2->set_nsamples(31);
@@ -59,12 +60,13 @@ void Fun4All_CaloProduction(const std::string &fname = "/sphenix/lustre01/sphnxp
   ca3->set_nsamples(31);
   ca3->set_processing_type(CaloWaveformProcessing::FAST);
   se->registerSubsystem(ca3);
-
+  /*
   CaloTowerBuilder *ca4 = new CaloTowerBuilder();
   ca4->set_detector_type(CaloTowerBuilder::ZDC);
   ca4->set_nsamples(31);
   ca4->set_processing_type(CaloWaveformProcessing::FAST);
   se->registerSubsystem(ca4);
+  */
   string outname = "output" + to_string(rn) + "file" + to_string(subfile) + ".root";
   CaloAna* caloana = new CaloAna("ana",outname.c_str());
   se->registerSubsystem(caloana);
